@@ -1,0 +1,160 @@
+@import "../../.cache/wal/colors-waybar.css";
+@define-color main alpha(@color0, 0.85);
+
+/* COLORS */
+
+/* Gruvbox Dark */
+
+/*@define-color bg #353C4A;*/
+@define-color light #D8DEE9;
+/*@define-color dark @nord_dark_font;*/
+@define-color warning #ebcb8b;
+/*@define-color critical #BF616A;*/
+/*@define-color mode @bg;*/
+/*@define-color workspaces @bg;*/
+/*@define-color workspaces @nord_dark_font;*/
+/*@define-color workspacesfocused #655b53;*/
+/*@define-color tray @bg;*/
+/*@define-color workspacesfocused #4C566A;
+@define-color tray @workspacesfocused;
+@define-color sound #EBCB8B;
+@define-color network #5D7096;
+@define-color memory #546484;
+@define-color cpu #596A8D;
+@define-color temp #4D5C78;
+@define-color layout #5e81ac;
+@define-color battery #88c0d0;
+@define-color date #434C5E;
+@define-color time #434C5E;
+@define-color backlight #434C5E;*/
+@define-color nord_bg #282828;
+@define-color nord_bg_blue @bg;
+@define-color nord_light #D8DEE9;
+
+@define-color nord_dark_font #272727;
+
+
+@define-color bg #282828;
+@define-color critical #BF616A;
+@define-color tray @bg;
+@define-color mode @bg;
+
+@define-color bluetint #448488;
+@define-color bluelight #83a597;
+@define-color magenta-dark #b16185;
+
+
+@define-color font_gruv_normal #ebdbb2;
+@define-color font_gruv_faded #a89985;
+@define-color font_gruv_darker #D8DEE9;
+@define-color font_dark_alternative #655b53;
+
+@define-color gruv-accent #98971a;
+
+
+/*@define-color main @color0;*/
+* {
+
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: 700;
+    font-size: 14px;
+    min-height: 0;
+    border: none;
+    border-radius: 0px;
+}
+
+window#waybar {
+    background-color: alpha(@bg, 0.9);
+    color: #b8b8b8;
+    border-radius: 10px;
+    border: 1px solid @gruv-accent;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); */
+    /* margin: 5px 10px; */
+}
+
+#custom-logo {
+    background-color: #d08770;
+    color: #1a1a1a;
+    padding: 0 8px;
+    font-weight: bold;
+}
+
+#tags {
+    /* color: @light; */
+    background-color: transparent;
+    margin-left: 0px;
+    /* border-radius: 4px; */
+}
+
+#tags button {
+    padding: 0 6px;
+    background-color: transparent;
+    color: @light;
+    border-radius: 0px;
+    min-width: 12px;
+}
+
+#tags button.focused {
+    background-color: @gruv-accent;
+    color: @bg;
+    /* font-weight: 900; */
+}
+
+#tags button:first-child {
+   border-radius: 10px 0 0 10px;
+   margin-left: 0;
+}
+/* #tags { */
+/*   background-color: transparent; */
+/* } */
+
+#window {
+  margin-left: 10px;
+  color: @light;
+}
+/* #workspaces button:hover { */
+/*     background-color: transparent; */
+/*     color: @light; */
+/* } */
+
+#custom-separator1,
+#custom-separator2 {
+    color: @light;
+    padding: 0 6px;
+}
+
+#custom-suckless {
+    color: @light;
+    padding: 0 4px;
+}
+#tray {
+    background-color: transparent;
+    padding: 0 8px;
+}
+
+#pulseaudio {
+    color: @light;
+    padding: 0 8px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+#clock {
+    color: @light;
+    padding: 0 8px 0 4px;
+}
+
+#custom-power {
+    color: @light;
+    padding: 0 20px 0 0;
+}
+
+#custom-notification {
+    padding: 0 12px;
+}

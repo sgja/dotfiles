@@ -1,0 +1,124 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "spacing": 0,
+    "margin": "5 8 5 8",
+    "reload_style_on_change": true,
+    
+    "modules-left": ["dwl/tags", "custom/separator1", "wlr/taskbar", "dwl/window"],
+    "modules-center": [],
+    "modules-right": ["tray", "custom/separator2", "pulseaudio", "custom/notification", "custom/separator2", "clock", "custom/power"],
+
+    // "custom/logo": {
+    //     "format": "1o",
+    //     "tooltip": false
+    // },
+
+    "ext/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": false,
+        "format": "{name}",
+        "on-click": "activate",
+        "on-click-right": "deactivate",
+        "on-scroll-up":"mmsg -d viewtoleft_have_client",
+        "on-scroll-down":"mmsg -d viewtoright_have_client",
+        // "format-empty": "{id}empty",
+        // "sort-by-id": true,
+    "persistent_workspaces": {
+        "1": { "name": "1" },
+        "2": { "name": "2" },
+        "3": { "name": "3" },
+        "4": { "name": "4" },
+        "5": { "name": "5" }
+    }
+
+    },
+
+    
+    "wlr/taskbar": {
+      "format": "{icon}",
+      "icon-size": 15,
+      "all-outputs": false,
+      "tooltip-format": "{title}",
+      "markup": true,
+      "on-click": "activate",
+      "on-click-right": "close",
+      "ignore-list": ["Rofi", "wofi"]
+    },
+
+    "dwl/window": {
+        "format": "[{layout}]  {title}",
+        "on-click":"bash ~/.config/mango/scripts/screenshot.sh"
+    },
+    
+
+    "custom/suckless": {
+          "format": "suckless",
+          "tooltip": false
+    },
+
+    "custom/separator1": {
+        "format": "|",
+        "tooltip": false
+    },
+
+    "custom/separator2": {
+        "format": "|",
+        "tooltip": false
+    },
+
+    "clock": {
+        "format": "󰸗 {:%d.%m.  %H:%M}",
+        "interval": 1,
+        "tooltip": false
+    },
+
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
+            "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "phone-muted": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+            },
+        "scroll-step": 3,
+        "on-click-middle": "pavucontrol",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    },
+
+    "custom/power": {
+        "format": "⏻",
+        "tooltip": false,
+        "on-click": "wlogout -l .config/mango/scripts/wlogout/layout --css .config/mango/scripts/wlogout/style.css -r 100"
+    },
+  
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='#ea6962'></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='#ea6962'></span>",
+      "dnd-none": "<span foreground='#ea6962'></span>",
+      "inhibited-notification": "",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='#ea6962'></span>",
+      "dnd-inhibited-none": "<span foreground='#ea6962'></span>"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+}
